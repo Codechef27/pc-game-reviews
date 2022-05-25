@@ -1,4 +1,4 @@
-# pc-game-reviews
+# pc-game-review
 
 ## User Story
 AS A PC game user 
