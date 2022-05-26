@@ -9,48 +9,50 @@
     <title>PC Game Reviews</title>
 </head>
 <body>
-    <header class="is-full level-item has-text-centered">
-        <h2>PC Game Reviews</h2> 
-    </header>
+  <header class="header">
+    <p class="is-size-1 has-text-centered">PC Game Reviews</p>
+  </header>
 
-    <hero class="hero is-medium is-link">
-        <section class="columns">
-            <div class="column hero-body title">
-             Popular Games      
-            </div>
-            <div class="column">
-             Content
-            </div> 
-        </section>   
-    </hero>
-    <div class="card">
-        <header class="card-header">
-          <p class="card-header-title">
-            Search for a Game
-          </p>
-          <input class="" id="" type="text" autofocus="true" placeholder="enter a game">
-          <button class="card-header-icon" aria-label="more options">Search
-            <span class="icon">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-        </header>
+  <hero class="hero-section is-mobile hero">
+    <div class="columns hero-body">
+      <div class="hero-title column is-4 is-two-fifths">
+        <p class="is-size-2 has-text-centered">Popular Games:</p>
       </div>
+      <div class="popular-games box column has-text-centered is-two-thirds">
+        <p>display popular games:</p>
+      </div>
+    </div>
+  </hero>
 
-      
+  <section class="search-area box columns">
+    <div class="column is-two-fifths has-text-centered">
+      <form class="search-card m-4 box">
+        <div class="field">
+          <label class="label is-size-4">Search for a Game:</label>
+          <div class="control">
+            <input id="user-input" class="input" type="text" autofocus="true" placeholder="enter a title">
+          </div>
+        </div>    
+        <button id="search-btn" class="button is-primary">Search</button>
+      </form>
+    </div>
+    <div class="column has-text-centered is-7">
+      <div class="search-results box" id="display-search-results">
+        <p> display search results:</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- <section class="row">
-    <form class="card">
-        <div>
-           <h3 class="card-content">Search for a game:</h3>
-           <input class="" id="" type="text" autofocus="true" placeholder="enter a game">
-            <button></button>
-    </form>
+  <section class="reviews columns is-mobile is-centered block">
+    <div class="column has-text-centered is-half">
+      <div class="display-reviews box" id="display-search-results">
+        <p> display reviews:</p>
+      </div>
+    </div>
+  </section>
+  <footer></footer>
 
-    </section> -->
-        
-
-
+<script src="./assets/js/script.js"></script>
     
 </body>
 </html>

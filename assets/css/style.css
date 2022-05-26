@@ -1,23 +1,58 @@
 
-
+:root{
+    --primary-color:rgb(50, 48, 48);
+    --secondary-color:rgb(195, 209, 221);
+    --terttiary-color:rgb(53, 204, 19);
+}
 * {
+    margin: 0;
+    padding: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-header {
+.header {
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
     font-size: 36px;
-    border-bottom: 2px solid rgb(19, 195, 204);
+    border-bottom: 4px solid var(--terttiary-color);
+   
 }
 
-.form {
-    margin: 0 0 0 20px;
-}
-    
-.button:active {
-  background: rgba(196, 196, 34, 0.863) ;
-
+.hero-section {
+    /* height: 21rem; */
+    background-color: var(--secondary-color);
+    border-bottom: 4px solid var(--terttiary-color);
 }
 
-.hero {
-    border-bottom: 2px solid black;
+.popular-games {
+    background-color: var(--primary-color);
+    height: 15rem;
 }
+
+.search-area {
+    background-color: var(--primary-color);
+    border-top: 4px solid var(--terttiary-color);
+}
+.search-card {
+    /* border: 2px solid var(--terttiary-color); */
+    text-align: center;
+    background-color: beige;
+
+}
+.search-results {
+    /* border: 2px solid var(--terttiary-color); */
+    height: 15rem;
+    /* display: none; */
+}
+
+.reviews {
+    background-color: var(--secondary-color);
+    border-top: 4px solid var(--terttiary-color);
+}
+
+.display-reviews {
+    height: 15rem;
+}
+
+
+
