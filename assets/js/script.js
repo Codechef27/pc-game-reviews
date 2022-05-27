@@ -36,10 +36,11 @@ function searchGame(event) {
       infoCon.setAttribute("class", "info-Con");
       infoCon.setAttribute("id", data[0].steamAppID);
 
-      var gameName = document.createElement("p");
+      // fix game name id posting above price
+      /*var gameName = document.createElement("p");
       gameName.setAttribute("class", "search-results");
       gameName.innerHTML = data[0].external;
-      console.log(data[0].external);
+      console.log(data[0].external);*/
 
       var cheapPrice = document.createElement("p");
       cheapPrice.setAttribute("class", "search-results");
@@ -48,7 +49,7 @@ function searchGame(event) {
       // append children elements to the result container
       resultContainer.append(gameImg);
       resultContainer.append(infoCon);
-      infoCon.appendChild(gameName);
+      //infoCon.appendChild(gameName);
       infoCon.append(cheapPrice);
     });
 }
