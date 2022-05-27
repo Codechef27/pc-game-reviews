@@ -1,30 +1,48 @@
 //on form submit we will send the content to the form and search for a game
-var submitBtn =  document.getElementById('game-search');
-var userInput = document.getElementById('user-input');
+var submitBtn = document.getElementById("game-search");
+var userInput = document.getElementById("user-input");
 
-function searchGame(event){
-    event.preventDefault();
+function searchGame(event) {
+  event.preventDefault();
 
- fetch('https://www.cheapshark.com/api/1.0/games?title='+ userInput.value +'&exact=1').then(function (res){
-     return res.json()
- }).then(function (data) {
-console.log(data)
-//grab content from api and render on page
+  fetch(
+    "https://www.cheapshark.com/api/1.0/games?title=" +
+      userInput.value +
+      "&exact=1"
+  )
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (data) {
+      console.log(data);
 
-//result container from html
-var resultContainer =document.getElementById('results')
+      //clear seach bar
+      userInput.value = "";
+      //clear display search result
 
-// create img element
-var gameImg =  document.createElement('img')
-// add img element attribute src and gve it the content
-gameImg.setAttribute('src', data[0].thumb)
+      //grab content from api and render on page
 
+      //result container from html
+      var resultContainer = document.getElementById("results");
+      resultContainer.innerHTML = "";
 
-// append children elements to the result container
-resultContainer.append(gameImg)
+      // create img element
+      var gameImg = document.createElement("img");
+      // add img element attribute src and gve it the content
+      gameImg.setAttribute("src", data[0].thumb);
 
- })
+      var infoCon = document.createElement("div");
+      infoCon.setAttribute("class", "info-Con");
+      //infoCon.innerHTML = "";
+
+      var cheapPrice = document.createElement("p");
+      cheapPrice.setAttribute("class", "search-results");
+      cheapPrice.innerHTML = "Cheapest Price:" + " $" + data[0].cheapest;
+
+      // append children elements to the result container
+      resultContainer.append(gameImg, infoCon);
+      infoCon.append(cheapPrice);
+    });
 }
 
-submitBtn.addEventListener('submit', searchGame)
-
+submitBtn.addEventListener("submit", searchGame);
