@@ -26,19 +26,20 @@
 
   <section class="search-area box columns">
     <div class="column is-two-fifths has-text-centered">
-      <form class="search-card m-4 box">
+      <form id="game-search" class="search-card m-4 box">
         <div class="field">
           <label class="label is-size-4">Search for a Game:</label>
           <div class="control">
-            <input id="user-input" class="input" type="text" autofocus="true" placeholder="enter a title">
+            <input id="user-input" class="input" type="text" autofocus="true" placeholder="enter a title"/>
           </div>
         </div>    
-        <button id="search-btn" class="button is-primary">Search</button>
+        <button class="button is-primary">Search</button>
       </form>
     </div>
     <div class="column has-text-centered is-7">
       <div class="search-results box" id="display-search-results">
         <p> display search results:</p>
+        <div id="results"></div>
       </div>
     </div>
   </section>
