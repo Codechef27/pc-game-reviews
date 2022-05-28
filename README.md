@@ -1,5 +1,8 @@
 # pc-game-review
 
+## Deployed Page
+ https://codechef27.github.io/pc-game-reviews/
+
 ## User Story
 AS A PC game user 
 I WANT to compare reviews and pricing
