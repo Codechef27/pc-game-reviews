@@ -42,10 +42,10 @@ function searchGame(event) {
       infoCon.setAttribute("id", data[0].steamAppID);
 
       // fix game name id posting above price
-      /*var gameName = document.createElement("p");
+      var gameName = document.createElement("p");
       gameName.setAttribute("class", "search-results");
       gameName.innerHTML = data[0].external;
-      console.log(data[0].external);*/
+      console.log(data[0].external);
 
       var cheapPrice = document.createElement("p");
       cheapPrice.setAttribute("class", "search-results");
@@ -54,43 +54,53 @@ function searchGame(event) {
       // append children elements to the result container
       imgContainer.append(gameImg);
       resultContainer.append(infoCon);
-      //infoCon.appendChild(gameName);
-      infoCon.append(cheapPrice);
+      infoCon.appendChild(gameName);
+      gameName.append(cheapPrice);
     });
 }
 
 function topRated() {
-    fetch(
-        "https://api.bestbuy.com/v1/products((search=PC&search=games)&customerReviewAverage>4&salePrice<70)?sort=image.asc&show=image,name,thumbnailImage,customerReviewAverage,type,longDescription,manufacturer,shortDescription,salePrice,categoryPath.name&facet=customerReviewAverage,10&format=json&apiKey=qhqws47nyvgze2mq3qx4jadt"
-                )
-        .then(function (res) {
-          return res.json();
-        })
-        .then(function (dataPop) {
-          console.log(dataPop);
-        
+  fetch(
+    "https://api.bestbuy.com/v1/products((search=PC&search=games)&customerReviewAverage>4&salePrice<70)?sort=image.asc&show=sku,image,name,thumbnailImage,customerReviewAverage,type,longDescription,manufacturer,shortDescription,salePrice,categoryPath.name&facet=customerReviewAverage,10&format=json&apiKey=qhqws47nyvgze2mq3qx4jadt"
+  )
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (dataPop) {
+      console.log(dataPop);
 
-         //result container from html
+      //result container from html
       var popGamesContainer = document.getElementById("popular-games");
       popGamesContainer.innerHTML = "";
 
-        for (var i = 0; i < 5; i++){
-      var popGameInfo = document.createElement("div");
-      popGameInfo.setAttribute("class", "pop-game-info");
+      popGamesContainer.setAttribute(
+        "style",
+        "display: flex; justify-content: space-around;"
+      );
 
-      // create img element
-      var popGameImg = document.createElement("img");
-      // add img element attribute src and gve it the content
-      popGameImg.setAttribute("src", dataPop.products[i].image);
-      //console.log(dataPop.products[i].image);
-      popGameImg.setAttribute("style", "height: 100px");
-      popGamesContainer.append(popGameImg);
-    
-      
-        }
-    })
-    }
+      for (var i = 0; i < 5; i++) {
+        var popGameInfo = document.createElement("div");
+        popGameInfo.setAttribute("class", "pop-game-info");
+        var popCon = document.createElement("a");
+        popCon.setAttribute(
+          "href",
+          "https://www.bestbuy.com/site/searchpage.jsp?st=" +
+            dataPop.products[i].sku
+        );
+
+        // create img element
+        var popGameImg = document.createElement("img");
+        // add img element attribute src and gve it the content
+        popGameImg.setAttribute("src", dataPop.products[i].image);
+        //console.log(dataPop.products[i].image);
+        popGameImg.setAttribute("style", "height: 10vw;");
+
+        popGamesContainer.append(popGameInfo);
+        popGameInfo.append(popCon);
+        popCon.append(popGameImg);
+      }
+    });
+}
 
 topRated();
 submitBtn.addEventListener("submit", searchGame);
-
