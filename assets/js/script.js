@@ -27,8 +27,11 @@ function searchGame(event) {
       resultContainer.innerHTML = "";
 
       var imgContainer = document.createElement("a");
-        imgContainer.setAttribute("href", "https://store.steampowered.com/app/" + data[0].steamAppID);
-        resultContainer.append(imgContainer);
+      imgContainer.setAttribute(
+        "href",
+        "https://store.steampowered.com/app/" + data[0].steamAppID
+      );
+      resultContainer.append(imgContainer);
 
       // create img element
       var gameImg = document.createElement("img");
