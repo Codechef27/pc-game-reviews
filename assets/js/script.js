@@ -56,14 +56,14 @@ function searchGame(event) {
 
 function topRated() {
     fetch(
-        "https://api.bestbuy.com/v1/products((search=PC&search=games)&customerReviewAverage>4)?sort=image.asc&show=image,name,thumbnailImage,customerReviewAverage,type,longDescription,manufacturer,shortDescription,salePrice,categoryPath.name&facet=customerReviewAverage,10&format=json&apiKey=qhqws47nyvgze2mq3qx4jadt"
+        "https://api.bestbuy.com/v1/products((search=PC&search=games)&customerReviewAverage>4&salePrice<70)?sort=image.asc&show=image,name,thumbnailImage,customerReviewAverage,type,longDescription,manufacturer,shortDescription,salePrice,categoryPath.name&facet=customerReviewAverage,10&format=json&apiKey=qhqws47nyvgze2mq3qx4jadt"
                 )
         .then(function (res) {
           return res.json();
         })
-        .then(function (dataSteam) {
-          console.log(dataSteam);
-        })
+        .then(function (dataPop) {
+          console.log(dataPop);
+        
 
          //result container from html
       var popGamesContainer = document.getElementById("popular-games");
@@ -74,14 +74,18 @@ function topRated() {
       popGameInfo.setAttribute("class", "pop-game-info");
 
       // create img element
-      var gameImg = document.createElement("img");
+      var popGameImg = document.createElement("img");
       // add img element attribute src and gve it the content
-      gameImg.setAttribute("src", data[0].thumb);
-      gameImg.setAttribute("style", "height: 100px");
-        }
-      
+      //popGameImg.setAttribute("src", dataPop.products[i].image);
+      console.log(dataPop.products[i].image);
+      popGameImg.setAttribute("style", "height: 100px");
+      popGamesContainer.append(popGameImg);
     
+      
+        }
+    })
     }
+
 topRated();
 submitBtn.addEventListener("submit", searchGame);
 
