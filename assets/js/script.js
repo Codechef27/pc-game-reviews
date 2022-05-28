@@ -76,8 +76,8 @@ function topRated() {
       // create img element
       var popGameImg = document.createElement("img");
       // add img element attribute src and gve it the content
-      //popGameImg.setAttribute("src", dataPop.products[i].image);
-      console.log(dataPop.products[i].image);
+      popGameImg.setAttribute("src", dataPop.products[i].image);
+      //console.log(dataPop.products[i].image);
       popGameImg.setAttribute("style", "height: 100px");
       popGamesContainer.append(popGameImg);
     
