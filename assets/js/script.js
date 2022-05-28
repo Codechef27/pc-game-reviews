@@ -56,7 +56,7 @@ function searchGame(event) {
 
 function topRated() {
   fetch(
-    "https://api.bestbuy.com/v1/products((search=PC&search=games)&customerReviewAverage>4&salePrice<70)?sort=image.asc&show=image,name,thumbnailImage,customerReviewAverage,type,longDescription,manufacturer,shortDescription,salePrice,categoryPath.name&facet=customerReviewAverage,10&format=json&apiKey=qhqws47nyvgze2mq3qx4jadt"
+    "https://api.bestbuy.com/v1/products((search=PC&search=games)&customerReviewAverage>4&salePrice<70)?sort=image.asc&show=sku,image,name,thumbnailImage,customerReviewAverage,type,longDescription,manufacturer,shortDescription,salePrice,categoryPath.name&facet=customerReviewAverage,10&format=json&apiKey=qhqws47nyvgze2mq3qx4jadt"
   )
     .then(function (res) {
       return res.json();
@@ -68,18 +68,31 @@ function topRated() {
       var popGamesContainer = document.getElementById("popular-games");
       popGamesContainer.innerHTML = "";
 
+      popGamesContainer.setAttribute(
+        "style",
+        "display: flex; justify-content: space-around;"
+      );
+
       for (var i = 0; i < 5; i++) {
         var popGameInfo = document.createElement("div");
         popGameInfo.setAttribute("class", "pop-game-info");
+        var popCon = document.createElement("a");
+        popCon.setAttribute(
+          "href",
+          "https://www.bestbuy.com/site/searchpage.jsp?st=" +
+            dataPop.products[i].sku
+        );
 
         // create img element
         var popGameImg = document.createElement("img");
         // add img element attribute src and gve it the content
         popGameImg.setAttribute("src", dataPop.products[i].image);
         //console.log(dataPop.products[i].image);
-        popGameImg.setAttribute("style", "height: 100px");
-        //add link url upon clicking pictue
-        popGamesContainer.append(popGameImg);
+        popGameImg.setAttribute("style", "height: 10vw;");
+
+        popGamesContainer.append(popGameInfo);
+        popGameInfo.append(popCon);
+        popCon.append(popGameImg);
       }
     });
 }
