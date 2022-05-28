@@ -55,37 +55,34 @@ function searchGame(event) {
 }
 
 function topRated() {
-    fetch(
-        "https://api.bestbuy.com/v1/products((search=PC&search=games)&customerReviewAverage>4&salePrice<70)?sort=image.asc&show=image,name,thumbnailImage,customerReviewAverage,type,longDescription,manufacturer,shortDescription,salePrice,categoryPath.name&facet=customerReviewAverage,10&format=json&apiKey=qhqws47nyvgze2mq3qx4jadt"
-                )
-        .then(function (res) {
-          return res.json();
-        })
-        .then(function (dataPop) {
-          console.log(dataPop);
-        
+  fetch(
+    "https://api.bestbuy.com/v1/products((search=PC&search=games)&customerReviewAverage>4&salePrice<70)?sort=image.asc&show=image,name,thumbnailImage,customerReviewAverage,type,longDescription,manufacturer,shortDescription,salePrice,categoryPath.name&facet=customerReviewAverage,10&format=json&apiKey=qhqws47nyvgze2mq3qx4jadt"
+  )
+    .then(function (res) {
+      return res.json();
+    })
+    .then(function (dataPop) {
+      console.log(dataPop);
 
-         //result container from html
+      //result container from html
       var popGamesContainer = document.getElementById("popular-games");
       popGamesContainer.innerHTML = "";
 
-        for (var i = 0; i < 5; i++){
-      var popGameInfo = document.createElement("div");
-      popGameInfo.setAttribute("class", "pop-game-info");
+      for (var i = 0; i < 5; i++) {
+        var popGameInfo = document.createElement("div");
+        popGameInfo.setAttribute("class", "pop-game-info");
 
-      // create img element
-      var popGameImg = document.createElement("img");
-      // add img element attribute src and gve it the content
-      popGameImg.setAttribute("src", dataPop.products[i].image);
-      //console.log(dataPop.products[i].image);
-      popGameImg.setAttribute("style", "height: 100px");
-      popGamesContainer.append(popGameImg);
-    
-      
-        }
-    })
-    }
+        // create img element
+        var popGameImg = document.createElement("img");
+        // add img element attribute src and gve it the content
+        popGameImg.setAttribute("src", dataPop.products[i].image);
+        //console.log(dataPop.products[i].image);
+        popGameImg.setAttribute("style", "height: 100px");
+        //add link url upon clicking pictue
+        popGamesContainer.append(popGameImg);
+      }
+    });
+}
 
 topRated();
 submitBtn.addEventListener("submit", searchGame);
-
