@@ -54,4 +54,34 @@ function searchGame(event) {
     });
 }
 
+function topRated() {
+    fetch(
+        "https://api.bestbuy.com/v1/products((search=PC&search=games)&customerReviewAverage>4)?sort=image.asc&show=image,name,thumbnailImage,customerReviewAverage,type,longDescription,manufacturer,shortDescription,salePrice,categoryPath.name&facet=customerReviewAverage,10&format=json&apiKey=qhqws47nyvgze2mq3qx4jadt"
+                )
+        .then(function (res) {
+          return res.json();
+        })
+        .then(function (dataSteam) {
+          console.log(dataSteam);
+        })
+
+         //result container from html
+      var popGamesContainer = document.getElementById("popular-games");
+      popGamesContainer.innerHTML = "";
+
+        for (var i = 0; i < 5; i++){
+      var popGameInfo = document.createElement("div");
+      popGameInfo.setAttribute("class", "pop-game-info");
+
+      // create img element
+      var gameImg = document.createElement("img");
+      // add img element attribute src and gve it the content
+      gameImg.setAttribute("src", data[0].thumb);
+      gameImg.setAttribute("style", "height: 100px");
+        }
+      
+    
+    }
+topRated();
 submitBtn.addEventListener("submit", searchGame);
+
