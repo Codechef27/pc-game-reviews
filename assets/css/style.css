@@ -77,3 +77,21 @@ button:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
+
+/* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
+@media screen and (max-width: 980px) {
+  .body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .container {
+    display: contents;
+    justify-content: center;
+  }
+  .row:hover {
+    display: flex;
+    font-size: 25px;
+    margin: 5px 5px 20px 5px;
+  }
+}
