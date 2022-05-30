@@ -27,11 +27,6 @@
   height: 15rem;
 }
 
-.popular-games:hover {
-  size-adjust: 200px;
-  transition: all 0.3s ease-in-out;
-}
-
 .search-area {
   background-color: var(--primary-color);
   border-top: 4px solid var(--tertiary-color);
