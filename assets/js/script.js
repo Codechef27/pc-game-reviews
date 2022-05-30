@@ -35,9 +35,8 @@ function searchGame(event) {
 
       // create img element
       var gameImg = document.createElement("img");
-      // add img element attribute src and gve it the content
+      // add img element attribute src and give it the content
       gameImg.setAttribute("src", data[0].thumb);
-
       gameImg.setAttribute("style", "height: 100px");
       //console.log("https://store.steampowered.com/app/" + data[0].steamAppID);
 
@@ -98,7 +97,6 @@ function topRated() {
         popGameImg.setAttribute("src", dataPop.products[i].image);
         //console.log(dataPop.products[i].image);
         popGameImg.setAttribute("style", "height: 10vw;");
-
         popGamesContainer.append(popGameInfo);
         popGameInfo.append(popCon);
         popCon.append(popGameImg);

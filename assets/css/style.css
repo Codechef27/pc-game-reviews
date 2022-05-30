@@ -67,3 +67,13 @@ button:hover {
   transition: all 0.3s ease-in-out;
   color: black;
 }
+
+#results:hover {
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.input:hover {
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+}
