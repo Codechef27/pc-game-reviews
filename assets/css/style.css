@@ -14,14 +14,14 @@
     color: var(--secondary-color);
     background-color: var(--primary-color);
     font-size: 36px;
-    border-bottom: 4px solid var(--terttiary-color);
+    border-bottom: 4px solid var(--tertiary-color);
    
 }
 
 .hero-section {
     /* height: 21rem; */
     background-color: var(--secondary-color);
-    border-bottom: 4px solid var(--terttiary-color);
+    border-bottom: 4px solid var(--tertiary-color);
 }
 
 .popular-games {
@@ -31,23 +31,23 @@
 
 .search-area {
     background-color: var(--primary-color);
-    border-top: 4px solid var(--terttiary-color);
+    border-top: 4px solid var(--tertiary-color);
 }
 .search-card {
-    /* border: 2px solid var(--terttiary-color); */
+    /* border: 2px solid var(--tertiary-color); */
     text-align: center;
     background-color: beige;
 
 }
 .search-results {
-    /* border: 2px solid var(--terttiary-color); */
+    /* border: 2px solid var(--tertiary-color); */
     height: 15rem;
     /* display: none; */
 }
 
 .reviews {
     background-color: var(--secondary-color);
-    border-top: 4px solid var(--terttiary-color);
+    border-top: 4px solid var(--tertiary-color);
     height: 200px;
 }
 
