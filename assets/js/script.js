@@ -37,6 +37,7 @@ function searchGame(event) {
       var gameImg = document.createElement("img");
       // add img element attribute src and gve it the content
       gameImg.setAttribute("src", data[0].thumb);
+
       gameImg.setAttribute("style", "height: 100px");
       //console.log("https://store.steampowered.com/app/" + data[0].steamAppID);
 

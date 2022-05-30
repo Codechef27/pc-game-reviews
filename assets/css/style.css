@@ -1,63 +1,74 @@
-
-:root{
-    --primary-color:rgb(50, 48, 48);
-    --secondary-color:rgb(162, 167, 170);
-    --tertiary-color:rgb(53, 204, 19);
+:root {
+  --primary-color: rgb(50, 48, 48);
+  --secondary-color: rgb(162, 167, 170);
+  --tertiary-color: rgb(53, 204, 19);
 }
 * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 .header {
-    color: var(--secondary-color);
-    background-color: var(--primary-color);
-    font-size: 36px;
-    border-bottom: 4px solid var(--tertiary-color);
-   
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  font-size: 36px;
+  border-bottom: 4px solid var(--tertiary-color);
 }
 
 .hero-section {
-    /* height: 21rem; */
-    background-color: var(--secondary-color);
-    border-bottom: 4px solid var(--tertiary-color);
+  /* height: 21rem; */
+  background-color: var(--secondary-color);
+  border-bottom: 4px solid var(--tertiary-color);
 }
 
 .popular-games {
-    background-color: var(--primary-color);
-    height: 15rem;
+  background-color: var(--primary-color);
+  height: 15rem;
 }
 
 .search-area {
-    background-color: var(--primary-color);
-    border-top: 4px solid var(--tertiary-color);
+  background-color: var(--primary-color);
+  border-top: 4px solid var(--tertiary-color);
 }
 .search-card {
-    /* border: 2px solid var(--tertiary-color); */
-    text-align: center;
-    background-color: beige;
-
+  /* border: 2px solid var(--tertiary-color); */
+  text-align: center;
+  background-color: beige;
 }
 .search-results {
-    /* border: 2px solid var(--tertiary-color); */
-    height: 15rem;
-    /* display: none; */
+  /* border: 2px solid var(--tertiary-color); */
+  height: 15rem;
+  /* display: none; */
 }
 
 .reviews {
-    background-color: var(--secondary-color);
-    border-top: 4px solid var(--tertiary-color);
-    height: 200px;
+  background-color: var(--secondary-color);
+  border-top: 4px solid var(--tertiary-color);
+  height: 200px;
 }
 
 .display-reviews {
-    height: 15rem;
+  height: 15rem;
 }
 
 footer {
-    background-color: var(--tertiary-color);
-    height: 50px;
+  background-color: var(--tertiary-color);
+  height: 50px;
 }
 
+.button {
+  background-color: rgb(64, 139, 114);
+  color: aliceblue;
+}
 
+button:hover {
+  font-size: 20px;
+  transition: all 0.3s ease-in-out;
+  color: black;
+}
+
+.resize img:hover {
+  size-adjust: 200px;
+  transition: all 0.3s ease-in-out;
+}
