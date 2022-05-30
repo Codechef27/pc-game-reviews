@@ -6,9 +6,9 @@ function searchGame(event) {
   event.preventDefault();
 
   fetch(
-    "https://www.cheapshark.com/api/1.0/games?title=" +
-      userInput.value +
-      "&exact=1"
+    "https://www.cheapshark.com/api/1.0/games?title="+ userInput.value +"&exact=0" 
+      
+      
   )
     .then(function (res) {
       return res.json();
@@ -60,7 +60,10 @@ function searchGame(event) {
       infoCon.appendChild(gameName);
       gameName.append(cheapPrice);
     });
+
+
 }
+
 
 function topRated() {
   fetch(
@@ -105,5 +108,8 @@ function topRated() {
     });
 }
 
+
+
 topRated();
 submitBtn.addEventListener("submit", searchGame);
+

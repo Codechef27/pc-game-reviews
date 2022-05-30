@@ -48,16 +48,21 @@
 .reviews {
     background-color: var(--secondary-color);
     border-top: 4px solid var(--tertiary-color);
-    height: 200px;
+    border-bottom: 4px solid var(--tertiary-color);
+    /* height: 200px; */
 }
 
 .display-reviews {
     height: 15rem;
 }
 
+.recent-searches {
+    height: 15rem;
+}
+
 footer {
     background-color: var(--tertiary-color);
-    height: 50px;
+    height: auto;
 }
 
 
