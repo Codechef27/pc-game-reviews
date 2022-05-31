@@ -1,13 +1,44 @@
 //on form submit we will send the content to the form and search for a game
 var submitBtn = document.getElementById("game-search");
 var userInput = document.getElementById("user-input");
+var searchHistory = [];
 
-function searchGame(event) {
-  event.preventDefault();
+function saveUserInput(search){
+  // add search into seachhistory Array
+  searchHistory.push(search)
+  // store stringified array into local storage
+  localStorage.setItem('search-history', JSON.stringify(searchHistory));
+  // save search into local storage
+  // call function that creates buttons from data in local storage. 
+}
+
+function checkLocalStorage(){
+  // check local storage for a key called search history and save as variable called 'stored'
+  var stored =localStorage.getItem('search-history')
+  
+  // if stored exists we want to parse stored and make it equal searchHistory
+  if (stored){
+    searchHistory = JSON.parse(stored)
+  }
+// call function that creates buttons from data in local storage. 
+
+}
+
+checkLocalStorage()
+
+// declare function that creates the search history buttons
+
+function captureUserInput(event){
+event.preventDefault();
+searchGame(userInput.value)
+}
+
+function searchGame(search) {
+  
 
   fetch(
     "https://www.cheapshark.com/api/1.0/games?title=" +
-      userInput.value +
+      search+
       "&exact=1"
   )
     .then(function (res) {
@@ -15,7 +46,7 @@ function searchGame(event) {
     })
     .then(function (data) {
       console.log(data);
-
+      saveUserInput(search);
       //clear seach bar
       userInput.value = "";
       //clear display search result
@@ -107,4 +138,4 @@ function topRated() {
 }
 
 topRated();
-submitBtn.addEventListener("submit", searchGame);
+submitBtn.addEventListener("submit", captureUserInput);
