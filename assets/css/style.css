@@ -24,7 +24,7 @@
 
 .popular-games {
   background-color: var(--primary-color);
-  height: 15rem;
+  /* height: 15rem; */
 }
 
 .search-area {
@@ -57,7 +57,6 @@
 }
 
 footer {
-
   background-color: var(--tertiary-color);
   height: 50px;
 }
