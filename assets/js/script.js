@@ -95,19 +95,19 @@ function topRated() {
         );
         var gameTitle = document.createElement("div")
         gameTitle.innerHTML=(dataPop.results[i].name)
-        gameTitle.setAttribute("class","height-100px" )
+        // gameTitle.setAttribute("class", "width: 20vw" )
 
         // create img element
         var popGameImg = document.createElement("img");
         // add img element attribute src and gve it the content
         popGameImg.setAttribute("src", dataPop.results[i].background_image);
-        // document.getElementById("game-title").textContent = dataPop.results[i].name;
-        //console.log(dataPop.products[i].image);
         popGameImg.setAttribute("style", "height: 10vw;");
         popGamesContainer.append(popGameInfo);
         popGameInfo.append(popCon);
         popCon.append(popGameImg,gameTitle);
         
+        
+
 
       }
     });
