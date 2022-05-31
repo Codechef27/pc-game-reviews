@@ -24,7 +24,7 @@
 
 .popular-games {
   background-color: var(--primary-color);
-  height: 15rem;
+  /* height: 15rem; */
 }
 
 .search-area {
@@ -50,6 +50,10 @@
 
 .display-reviews {
   height: 15rem;
+}
+
+.recent-searches {
+    height: 15rem;
 }
 
 footer {
