@@ -2,8 +2,9 @@
 var submitBtn = document.getElementById("game-search");
 var userInput = document.getElementById("user-input");
 var searchHistory = [];
+var searchHistoryEl = document.getElementById("search-history-list");
 
-function saveUserInput(search){
+function saveUserInput(search) {
   // add search into seachhistory Array
   searchHistory.push(search)
   // store stringified array into local storage
@@ -12,34 +13,48 @@ function saveUserInput(search){
   // call function that creates buttons from data in local storage. 
 }
 
-function checkLocalStorage(){
+function checkLocalStorage() {
   // check local storage for a key called search history and save as variable called 'stored'
-  var stored =localStorage.getItem('search-history')
-  
+  var stored = localStorage.getItem('search-history');
+
   // if stored exists we want to parse stored and make it equal searchHistory
-  if (stored){
-    searchHistory = JSON.parse(stored)
+  if (stored) {
+    searchHistory = JSON.parse(stored);
+    return true;
+  } else {
+    return false;
   }
-// call function that creates buttons from data in local storage. 
+
+  // call function that creates buttons from data in local storage. 
 
 }
 
-checkLocalStorage()
+console.log(checkLocalStorage());
 
+function populateSearchHistory() {
+  if (checkLocalStorage()) {
+    for (let i = 0; i < searchHistory.length; i++) {
+      var listItem = document.createElement("li");
+      listItem.innerHTML = searchHistory[i];
+      searchHistoryEl.appendChild(listItem);
+    }
+  }
+}
+populateSearchHistory();
 // declare function that creates the search history buttons
 
-function captureUserInput(event){
-event.preventDefault();
-searchGame(userInput.value)
+function captureUserInput(event) {
+  event.preventDefault();
+  searchGame(userInput.value)
 }
 
 function searchGame(search) {
-  
+
 
   fetch(
     "https://www.cheapshark.com/api/1.0/games?title=" +
-      search+
-      "&exact=1"
+    search +
+    "&exact=1"
   )
     .then(function (res) {
       return res.json();
@@ -120,7 +135,7 @@ function topRated() {
         popCon.setAttribute(
           "href",
           "https://www.bestbuy.com/site/searchpage.jsp?st=" +
-            dataPop.products[i].sku
+          dataPop.products[i].sku
         );
 
         // create img element
