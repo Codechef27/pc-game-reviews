@@ -6,9 +6,9 @@ function searchGame(event) {
   event.preventDefault();
 
   fetch(
-    "https://www.cheapshark.com/api/1.0/games?title="+ userInput.value +"&exact=0" 
-      
-      
+    "https://www.cheapshark.com/api/1.0/games?title=" +
+      userInput.value +
+      "&exact=0"
   )
     .then(function (res) {
       return res.json();
@@ -60,10 +60,7 @@ function searchGame(event) {
       infoCon.appendChild(gameName);
       gameName.append(cheapPrice);
     });
-
-
 }
-
 
 function topRated() {
   fetch(
@@ -90,31 +87,23 @@ function topRated() {
         var popCon = document.createElement("a");
         popCon.setAttribute(
           "href",
-          "https://rawg.io/games/"+dataPop.results[i].slug 
-            
+          "https://rawg.io/games/" + dataPop.results[i].slug
         );
-        var gameTitle = document.createElement("div")
-        gameTitle.innerHTML=(dataPop.results[i].name)
+        var gameTitle = document.createElement("div");
+        gameTitle.innerHTML = dataPop.results[i].name;
         // gameTitle.setAttribute("class", "width: 20vw" )
 
         // create img element
         var popGameImg = document.createElement("img");
         // add img element attribute src and gve it the content
         popGameImg.setAttribute("src", dataPop.results[i].background_image);
-        popGameImg.setAttribute("style", "height: 10vw;");
+        popGameImg.setAttribute("style", "height: 100px;", "object-fit: fill;");
         popGamesContainer.append(popGameInfo);
         popGameInfo.append(popCon);
-        popCon.append(popGameImg,gameTitle);
-        
-        
-
-
+        popCon.append(popGameImg, gameTitle);
       }
     });
 }
 
-
-
 topRated();
 submitBtn.addEventListener("submit", searchGame);
-

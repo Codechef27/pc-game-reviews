@@ -30,7 +30,6 @@
 .search-area {
   background-color: var(--primary-color);
   border-top: 4px solid var(--tertiary-color);
-  
 }
 .search-card {
   /* border: 2px solid var(--tertiary-color); */
@@ -50,12 +49,12 @@
 }
 
 .display-reviews {
-  width:50vw;
-  height:50vw;
+  width: 50vw;
+  height: 50vw;
 }
 
 .recent-searches {
-    height: 15rem;
+  height: 15rem;
 }
 
 footer {
@@ -99,5 +98,15 @@ button:hover {
     display: flex;
     font-size: 25px;
     margin: 5px 5px 20px 5px;
+  }
+  .reviews iframe {
+    height: 1000px;
+    width: 400px;
+  }
+  .display-reviews {
+    margin-bottom: 100px;
+  }
+  .pop-game-info {
+    justify-content: space-around;
   }
 }
