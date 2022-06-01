@@ -27,10 +27,10 @@
   /* height: 15rem; */
 }
 
-.search-area {
+/* .search-area {
   background-color: var(--primary-color);
   border-top: 4px solid var(--tertiary-color);
-}
+} */
 .search-card {
   /* border: 2px solid var(--tertiary-color); */
   text-align: center;
@@ -38,12 +38,22 @@
 }
 .search-results {
   /* border: 2px solid var(--tertiary-color); */
-  height: 15rem;
+  height:fit-content;
+  background-color: beige;
   /* display: none; */
 }
 
+.search-area {
+  padding: 10px;
+  background-color: var(--primary-color);
+  /* border-right: 4px solid var(--tertiary-color);
+  border-left: 4px solid var(--tertiary-color); */
+  height:auto;
+  width: auto;
+}
+
 .reviews {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   border-top: 4px solid var(--tertiary-color);
   /* height: 200px; */
 }
@@ -54,7 +64,8 @@
 }
 
 .recent-searches {
-  height: 15rem;
+  height: max-content;
+  background-color: beige;
 }
 
 footer {
@@ -82,6 +93,9 @@ button:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
+.pop-game-info  {
+  width: 15vw;
+}
 
 /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
 @media screen and (max-width: 980px) {
@@ -108,5 +122,6 @@ button:hover {
   }
   .pop-game-info {
     justify-content: space-around;
+    width: 30vw;
   }
 }
