@@ -2,6 +2,40 @@
 var submitBtn = document.getElementById("game-search");
 var userInput = document.getElementById("user-input");
 
+var searchHistory = [];
+var searchHistoryEl = document.getElementById("search-history-list");
+function saveUserInput(search) {
+  // add search into seachhistory Array
+  searchHistory.push(search);
+  // store stringified array into local storage
+  localStorage.setItem("search-history", JSON.stringify(searchHistory));
+  // save search into local storage
+  // call function that creates buttons from data in local storage.
+}
+function checkLocalStorage() {
+  // check local storage for a key called search history and save as variable called ‘stored’
+  var stored = localStorage.getItem("search-history");
+  // if stored exists we want to parse stored and make it equal searchHistory
+  if (stored) {
+    searchHistory = JSON.parse(stored);
+    return true;
+  } else {
+    return false;
+  }
+  // call function that creates buttons from data in local storage.
+}
+console.log(checkLocalStorage());
+function populateSearchHistory() {
+  if (checkLocalStorage()) {
+    for (let i = 0; i < searchHistory.length; i++) {
+      var listItem = document.createElement("li");
+      listItem.innerHTML = searchHistory[i];
+      searchHistoryEl.appendChild(listItem);
+    }
+  }
+}
+populateSearchHistory();
+
 function searchGame(event) {
   event.preventDefault();
 
