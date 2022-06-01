@@ -21,21 +21,50 @@
       <p class="is-size-1 has-text-centered">PC Game Reviews</p>
     </header>
 
-    <hero class="hero-section is-mobile hero">
-      <div class="columns hero-body">
-        <div class="hero-title column">
-          <p class="is-size-4 has-text-centered">Popular Games:</p>
+    <hero class="hero-section is-mobile hero row">
+      <div class="columns hero-body" >
+       <section class="search-area  is-4 ">
+        <div class=" has-text-centered">
+          
+          <form id="game-search" class="search-card box">
+            <div class="field">
+              <label class="label is-one-quarter">Search for a Game:</label>  
+              <div class="control">
+                <input
+                  id="user-input"
+                  class="input"
+                  type="text"
+                  autofocus="true"
+                  placeholder="enter a title"
+                />
+              </div>
+            </div>
+            <button class="button">Search</button>
+          </form>
+          <div class=" has-text-centered">
+            <div class="search-results box" id="display-search-results">
+              <p>Click on the Title:</p>
+              <div id="results"></div>
+            </div>
         </div>
-        <div
-          id="popular-games"
-          class="popular-games box column has-text-centered is-half">
-        
-          <p>display popular games:</p>
+       </section>
+       <section class="column">
+        <div class="is-half">
+          <div class="hero-title">
+            <p class="is-size-4 has-text-centered">Popular Games:</p>
+           </div>
+          <div
+            id="popular-games"
+            class="popular-games box has-text-centered is-half">
+          
+            <p>display popular games:</p>
+          </div>
         </div>
-      </div>
+      </div> 
+      </section>      
     </hero>
 
-    <section class="search-area box mb-0 columns">
+    <!-- <section class="search-area box mb-0 columns">
       <div class="column is-two-fifths has-text-centered">
         <form id="game-search" class="search-card m-4 box">
           <div class="field">
@@ -60,7 +89,7 @@
           <div id="results"></div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <section class="reviews is-centered">
       <div class="has-text-centered">
