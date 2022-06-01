@@ -52,9 +52,9 @@ function searchGame(search) {
 
 
   fetch(
-    "https://www.cheapshark.com/api/1.0/games?title=" +
-    search +
-    "&exact=1"
+    "https://www.cheapshark.com/api/1.0/games?title="+ userInput.value +"&exact=0" 
+      
+      
   )
     .then(function (res) {
       return res.json();
@@ -81,9 +81,8 @@ function searchGame(search) {
 
       // create img element
       var gameImg = document.createElement("img");
-      // add img element attribute src and gve it the content
+      // add img element attribute src and give it the content
       gameImg.setAttribute("src", data[0].thumb);
-
       gameImg.setAttribute("style", "height: 100px");
       //console.log("https://store.steampowered.com/app/" + data[0].steamAppID);
 
@@ -107,11 +106,14 @@ function searchGame(search) {
       infoCon.appendChild(gameName);
       gameName.append(cheapPrice);
     });
+
+
 }
+
 
 function topRated() {
   fetch(
-    "https://api.bestbuy.com/v1/products((search=PC&search=games)&customerReviewAverage>4&salePrice<70)?sort=image.asc&show=sku,image,name,thumbnailImage,customerReviewAverage,type,longDescription,manufacturer,shortDescription,salePrice,categoryPath.name&facet=customerReviewAverage,10&format=json&apiKey=qhqws47nyvgze2mq3qx4jadt"
+    "https://api.rawg.io/api/games?key=0348bed11a46424494a92449b6237be9&page=2"
   )
     .then(function (res) {
       return res.json();
@@ -125,32 +127,40 @@ function topRated() {
 
       popGamesContainer.setAttribute(
         "style",
-        "display: flex; justify-content: space-around;"
+        "display: flex; flex-wrap:wrap; justify-content:space-around"
       );
 
-      for (var i = 0; i < 5; i++) {
+      for (var i = 0; i < 12; i++) {
         var popGameInfo = document.createElement("div");
         popGameInfo.setAttribute("class", "pop-game-info");
         var popCon = document.createElement("a");
         popCon.setAttribute(
           "href",
-          "https://www.bestbuy.com/site/searchpage.jsp?st=" +
-          dataPop.products[i].sku
+          "https://rawg.io/games/"+dataPop.results[i].slug 
+            
         );
+        var gameTitle = document.createElement("div")
+        gameTitle.innerHTML=(dataPop.results[i].name)
+        // gameTitle.setAttribute("class", "width: 20vw" )
 
         // create img element
         var popGameImg = document.createElement("img");
         // add img element attribute src and gve it the content
-        popGameImg.setAttribute("src", dataPop.products[i].image);
-        //console.log(dataPop.products[i].image);
+        popGameImg.setAttribute("src", dataPop.results[i].background_image);
         popGameImg.setAttribute("style", "height: 10vw;");
-
         popGamesContainer.append(popGameInfo);
         popGameInfo.append(popCon);
-        popCon.append(popGameImg);
+        popCon.append(popGameImg,gameTitle);
+        
+        
+
+
       }
     });
 }
 
+
+
 topRated();
-submitBtn.addEventListener("submit", captureUserInput);
+submitBtn.addEventListener("submit", searchGame);
+
