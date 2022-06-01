@@ -23,39 +23,46 @@
 
     <hero class="hero-section is-mobile hero row">
       <section class="columns m-0 level">
-        <div class="search-area is-3 column has-text-centered ">
-          <div class=" has-text-centered">
+        <div class="search-area is-3 column has-text-centered">
+          <div class="has-text-centered">
             <form id="game-search" class="search-card box">
               <div class="field">
                 <label class="label is-one-quarter">Search for a Game:</label>
                 <div class="control">
-                  <input id="user-input" class="input" type="text" autofocus="true" placeholder="enter a title" />
+                  <input
+                    id="user-input"
+                    class="input"
+                    type="text"
+                    autofocus="true"
+                    placeholder="enter a title"
+                  />
                 </div>
               </div>
               <button class="button">Search</button>
             </form>
-            <div class=" has-text-centered">
+            <div class="has-text-centered">
               <div class="search-results box" id="display-search-results">
                 <p>Click on the Title:</p>
                 <div id="results"></div>
               </div>
-              <div id="search-history-container" class="recent-searches column box has-text-centered">
+              <div
+                id="search-history-container"
+                class="recent-searches column box has-text-centered"
+              >
                 <h4>History</h4>
                 <div id="search-history-results">
-                  <ul id="search-history-list">
-                  </ul>
+                  <ul id="search-history-list"></ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
+
         <div class="column is-three-quarters is-vcentered">
           <div class="hero-title">
             <p class="is-size-4 has-text-centered">Popular Games:</p>
           </div>
           <div id="popular-games" class="popular-games box has-text-centered">
-        
             <p>display popular games:</p>
           </div>
         </div>
@@ -64,15 +71,16 @@
 
     <section class="reviews is-centered">
       <div class="has-text-centered">
-        <h3> Explore Games:</h3>
+        <h3>Explore Games:</h3>
         <div>
-          <iframe class="display-reviews is-mobile"  src="https://rawg.io/games/"></iframe>
-        </div>  
+          <iframe
+            class="display-reviews is-mobile"
+            src="https://rawg.io/games/"
+          ></iframe>
+        </div>
       </div>
     </section>
-    <footer>
-
-    </footer>
+    <footer></footer>
 
     <script src="./assets/js/script.js"></script>
   </body>
