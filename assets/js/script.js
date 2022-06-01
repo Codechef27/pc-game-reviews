@@ -30,7 +30,7 @@ function populateSearchHistory() {
     for (let i = 0; i < searchHistory.length; i++) {
       var listItem = document.createElement("li");
       listItem.innerHTML = searchHistory[i];
-      searchHistoryEl.appendChild(listItem);
+      // searchHistoryEl.appendChild(listItem);
     }
   }
 }
@@ -71,7 +71,7 @@ function searchGame(event) {
       var gameImg = document.createElement("img");
       // add img element attribute src and give it the content
       gameImg.setAttribute("src", data[0].thumb);
-      gameImg.setAttribute("style", "height: 100px");
+      gameImg.setAttribute("style", "height: 80px");
       //console.log("https://store.steampowered.com/app/" + data[0].steamAppID);
 
       var infoCon = document.createElement("div");
@@ -125,13 +125,13 @@ function topRated() {
         );
         var gameTitle = document.createElement("div");
         gameTitle.innerHTML = dataPop.results[i].name;
-        // gameTitle.setAttribute("class", "width: 20vw" )
+        // gameTitle.setAttribute("class",)
 
         // create img element
         var popGameImg = document.createElement("img");
         // add img element attribute src and gve it the content
         popGameImg.setAttribute("src", dataPop.results[i].background_image);
-        popGameImg.setAttribute("style", "height: 100px;", "object-fit: fill;");
+        // popGameImg.setAttribute("style", "height: 100px;", "object-fit: fill;");
         popGamesContainer.append(popGameInfo);
         popGameInfo.append(popCon);
         popCon.append(popGameImg, gameTitle);
