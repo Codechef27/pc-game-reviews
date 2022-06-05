@@ -18,6 +18,7 @@ PC Game Reviews- is a dynamic web application where a user can search for a game
 ## API'S we will use:
 rawg-API.
 steam API. 
+cheapshark API.
 
 ## Screencast of live site
 
